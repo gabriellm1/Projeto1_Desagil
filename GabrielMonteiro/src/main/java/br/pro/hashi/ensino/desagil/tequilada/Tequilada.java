@@ -22,6 +22,9 @@ public class Tequilada {
 
             	// Constrói a janela.
             	JFrame frame = new JFrame();
+            	
+            	// Permite movimento do humanPlayer
+            	frame.addKeyListener(controller);
 
             	// Coloca a visão dentro da janela.
             	frame.setContentPane(view);

@@ -2,14 +2,17 @@ package br.pro.hashi.ensino.desagil.tequilada;
 
 public class Model {
 	private Board board;
-	private Player cpuPlayer;
-	private Player humanPlayer;
+	private CpuPlayer cpuPlayer;
+	private HumanPlayer humanPlayer;
+	private Target target;
 
 	public Model() {
 		board = new Board("board.txt");
 
-		cpuPlayer = new Player(board.getNumRows() - 1, board.getNumCols() - 1);
-		humanPlayer = new Player(0, 0);
+		cpuPlayer = new CpuPlayer(board.getNumRows() - 1, board.getNumCols() - 1);
+		humanPlayer = new HumanPlayer(0, 0);
+		
+		target = new Target(4,14);
 	}
 
 	public void update() {
@@ -19,10 +22,13 @@ public class Model {
 	public Board getBoard() {
 		return board;
 	}
-	public Player getCpuPlayer() {
+	public CpuPlayer getCpuPlayer() {
 		return cpuPlayer;
 	}
-	public Player getHumanPlayer() {
+	public HumanPlayer getHumanPlayer() {
 		return humanPlayer;
+	}
+	public Target getTarget(){
+		return target;
 	}
 }
